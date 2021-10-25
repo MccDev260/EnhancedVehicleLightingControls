@@ -34,7 +34,7 @@ namespace EnhancedVehicleLightingControls
         private void OnTick(object sender, EventArgs e)
         {
             string modName = "Enhanced Vehicle Lighting Controls";
-            string version = "PreRelease v0.2.0";
+            string version = "PreRelease v0.2.1";
             string developer = "MccDev260";
 
             if (firstTime)
@@ -45,52 +45,68 @@ namespace EnhancedVehicleLightingControls
         }
 
         private void OnKeyDown(object sender, KeyEventArgs e)
-        { 
-                
+        {   
             if (playerCharacter.CurrentVehicle != null)
             {
-                if (playerCharacter.CurrentVehicle.HasSiren)
-                {
-                    if (e.KeyCode == sirenToggleKey)
-                    {
-                        isSirenSilent = !isSirenSilent;
-                        playerCharacter.CurrentVehicle.IsSirenSilent = isSirenSilent;
-                    }
-                }
+                if (e.KeyCode == sirenToggleKey)
+                    ToggleSiren();
 
-                if (playerCharacter.CurrentVehicle.AreLightsOn)
-                {
-                    if (e.KeyCode == beamToggleKey)
-                        playerCharacter.CurrentVehicle.AreHighBeamsOn = !playerCharacter.CurrentVehicle.AreHighBeamsOn;
-                }
+                if (e.KeyCode == beamToggleKey)
+                    ToggleFullBeams();
 
                 if (e.KeyCode == interiorLightToggleKey)
-                    playerCharacter.CurrentVehicle.IsInteriorLightOn = !playerCharacter.CurrentVehicle.IsInteriorLightOn;
+                    ToggleInteriorLights();
 
                 if (e.KeyCode == rightIndicatorKey)
                 {
-                    rightIndicator = !rightIndicator;
-                    playerCharacter.CurrentVehicle.IsRightIndicatorLightOn = rightIndicator;
+                    ToggleRightIndicator();
 
                     if (leftIndicator)
-                    {
-                        leftIndicator = !leftIndicator;
-                        playerCharacter.CurrentVehicle.IsLeftIndicatorLightOn = leftIndicator;
-                    }
+                        ToggleLeftIndicator();
                 }
 
                 if (e.KeyCode == leftIndicatorKey)
                 {
-                    leftIndicator = !leftIndicator;
-                    playerCharacter.CurrentVehicle.IsLeftIndicatorLightOn = leftIndicator;
+                    ToggleLeftIndicator();
 
                     if (rightIndicator)
-                    {
-                        rightIndicator = !rightIndicator;
-                        playerCharacter.CurrentVehicle.IsRightIndicatorLightOn = rightIndicator;
-                    }
+                        ToggleRightIndicator();
                 }
             }
+        }
+
+        private void ToggleSiren()
+        {
+            if (playerCharacter.CurrentVehicle.HasSiren)
+            {
+                isSirenSilent = !isSirenSilent;
+                playerCharacter.CurrentVehicle.IsSirenSilent = isSirenSilent;
+            }
+        }
+
+        private void ToggleFullBeams()
+        {
+            if (playerCharacter.CurrentVehicle.AreLightsOn)
+            {
+                playerCharacter.CurrentVehicle.AreHighBeamsOn = !playerCharacter.CurrentVehicle.AreHighBeamsOn;
+            }
+        }
+
+        private void ToggleInteriorLights()
+        {
+            playerCharacter.CurrentVehicle.IsInteriorLightOn = !playerCharacter.CurrentVehicle.IsInteriorLightOn;
+        }
+
+        private void ToggleRightIndicator()
+        {
+            rightIndicator = !rightIndicator;
+            playerCharacter.CurrentVehicle.IsRightIndicatorLightOn = rightIndicator;
+        }
+
+        private void ToggleLeftIndicator()
+        {
+            leftIndicator = !leftIndicator;
+            playerCharacter.CurrentVehicle.IsLeftIndicatorLightOn = leftIndicator;
         }
     }
 }
