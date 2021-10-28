@@ -26,17 +26,17 @@ namespace EnhancedVehicleLightingControls
 
             #region Keys
             sirenToggleKey = config.GetValue<Keys>("Emergency Vehicles", "Siren_Toggle_Key", Keys.Tab);
-            beamToggleKey = config.GetValue<Keys>("All", "Beam_Toggle_Key", Keys.CapsLock);
-            interiorLightToggleKey = config.GetValue<Keys>("All", "Interior_Light_Toggle_Key", Keys.I);
-            leftIndicatorKey = config.GetValue<Keys>("All", "Left_Indicator_key", Keys.Left);
-            rightIndicatorKey = config.GetValue<Keys>("All", "Right_Indicator_key", Keys.Right);
+            beamToggleKey = config.GetValue<Keys>("Headlights", "Beam_Toggle_Key", Keys.CapsLock);
+            interiorLightToggleKey = config.GetValue<Keys>("Interior", "Interior_Light_Toggle_Key", Keys.I);
+            leftIndicatorKey = config.GetValue<Keys>("Indicators", "Left_Indicator_key", Keys.Left);
+            rightIndicatorKey = config.GetValue<Keys>("Indicators", "Right_Indicator_key", Keys.Right);
             #endregion
 
             #region Buttons
             sirenToggleButton = config.GetValue<GTA.Control>("Emergency Vehicles", "Siren_Toggle_Button", GTA.Control.ScriptPadDown);
-            beamToggleButton = config.GetValue<GTA.Control>("All", "Beam_Toggle_Button", GTA.Control.ScriptRLeft);
-            leftIndicatorButton = config.GetValue<GTA.Control>("All", "Left_Indicator_Button", GTA.Control.ScriptPadLeft);
-            rightIndicatorButton = config.GetValue<GTA.Control>("All", "Right_Indicator_Button", GTA.Control.ScriptPadRight);
+            beamToggleButton = config.GetValue<GTA.Control>("Headlights", "Beam_Toggle_Button", GTA.Control.ScriptRLeft);
+            leftIndicatorButton = config.GetValue<GTA.Control>("Indicators", "Left_Indicator_Button", GTA.Control.ScriptPadLeft);
+            rightIndicatorButton = config.GetValue<GTA.Control>("Indicators", "Right_Indicator_Button", GTA.Control.ScriptPadRight);
             #endregion
         }
 
