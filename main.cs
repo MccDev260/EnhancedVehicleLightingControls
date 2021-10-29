@@ -116,20 +116,20 @@ namespace EnhancedVehicleLightingControls
 
         private void ToggleRightIndicator()
         {
-            rightIndicator = !rightIndicator;
-            playerCharacter.CurrentVehicle.IsRightIndicatorLightOn = rightIndicator;
-
             if (leftIndicator)
                 ToggleLeftIndicator();
+
+            rightIndicator = !rightIndicator;
+            playerCharacter.CurrentVehicle.IsRightIndicatorLightOn = rightIndicator;
         }
 
         private void ToggleLeftIndicator()
         {
-            leftIndicator = !leftIndicator;
-            playerCharacter.CurrentVehicle.IsLeftIndicatorLightOn = leftIndicator;
-
             if (rightIndicator)
                 ToggleRightIndicator();
+
+            leftIndicator = !leftIndicator;
+            playerCharacter.CurrentVehicle.IsLeftIndicatorLightOn = leftIndicator;
         }
     }
 }
