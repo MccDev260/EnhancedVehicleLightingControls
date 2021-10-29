@@ -49,6 +49,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="docs\ControllerButtonList.md" />
+    <None Include="docs\README.md" />
     <None Include="EVLC_Settings.ini" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
