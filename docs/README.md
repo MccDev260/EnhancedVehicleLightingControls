@@ -26,15 +26,16 @@ As of v0.2.0 this mod has basic controller support. Despite this, i still recomm
 - **Siren Toggle**: Tab
 - **Beam Toggle**: CapsLock
 - **Interior Light Toggle**: I
-- **Left Indicator**: Left Arrow
-- **Right Indicator**: Right Arrow
+- **Left Indicator**: Left
+- **Right Indicator**: Right
+- **Hazard lights**: Down 
     
 #### *Controller*:
 - **Siren Toggle**: DPadDown
 - **Beam Toggle**: x button
 - **Left Indicator**: DPadLeft
 - **Right Indicator**: DPadRight
-
+- **Hazard lights**: RB
 
 
 #### *Custom Bindings*:
@@ -44,6 +45,7 @@ See '\docs\ControllerButtonList.pdf' for a list of valid button binds.
 --- 
 
 ## Changelog
+- **v0.3.0**: Added hazard light features.
 - **v0.2.3.0**: Added basic controller support.
 
 ---
