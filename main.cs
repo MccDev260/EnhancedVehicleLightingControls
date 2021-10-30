@@ -15,8 +15,8 @@ namespace EnhancedVehicleLightingControls
         bool leftIndicator, rightIndicator;
         bool hazards;
 
-        Keys sirenToggleKey, beamToggleKey, interiorLightToggleKey, leftIndicatorKey, rightIndicatorKey;
-        GTA.Control sirenToggleButton, beamToggleButton, leftIndicatorButton, rightIndicatorButton;
+        Keys sirenToggleKey, beamToggleKey, interiorLightToggleKey, leftIndicatorKey, rightIndicatorKey, hazardsKey;
+        GTA.Control sirenToggleButton, beamToggleButton, leftIndicatorButton, rightIndicatorButton, hazardsButton;
 
         public Main()
         {
@@ -30,7 +30,8 @@ namespace EnhancedVehicleLightingControls
             beamToggleKey = config.GetValue<Keys>("Headlights", "Beam_Toggle_Key", Keys.CapsLock);
             interiorLightToggleKey = config.GetValue<Keys>("Interior", "Interior_Light_Toggle_Key", Keys.I);
             leftIndicatorKey = config.GetValue<Keys>("Indicators", "Left_Indicator_key", Keys.Left);
-            rightIndicatorKey = config.GetValue<Keys>("Indicators", "Right_Indicator_key", Keys.Right);
+            rightIndicatorKey = config.GetValue<Keys>("Indicators", "Right_Indicator_Key", Keys.Right);
+            hazardsKey = config.GetValue<Keys>("Indicators", "Hazard_Lights_Key", Keys.Down);
             #endregion
 
             #region Buttons
@@ -38,6 +39,7 @@ namespace EnhancedVehicleLightingControls
             beamToggleButton = config.GetValue<GTA.Control>("Headlights", "Beam_Toggle_Button", GTA.Control.ScriptRLeft);
             leftIndicatorButton = config.GetValue<GTA.Control>("Indicators", "Left_Indicator_Button", GTA.Control.ScriptPadLeft);
             rightIndicatorButton = config.GetValue<GTA.Control>("Indicators", "Right_Indicator_Button", GTA.Control.ScriptPadRight);
+            hazardsButton = config.GetValue<GTA.Control>("Indicators", "Hazard_Lights_Button", GTA.Control.ScriptRB);
             #endregion
         }
 
@@ -76,6 +78,9 @@ namespace EnhancedVehicleLightingControls
 
                 if (e.KeyCode == leftIndicatorKey)
                     ToggleLeftIndicator();
+
+                if (e.KeyCode == hazardsKey)
+                    ToggleHazards();
             }
         }
 
@@ -92,6 +97,9 @@ namespace EnhancedVehicleLightingControls
 
             if (Game.IsControlJustPressed(rightIndicatorButton))
                 ToggleRightIndicator();
+
+            if (Game.IsControlJustPressed(hazardsButton))
+                ToggleHazards();
         }
         #endregion
 
