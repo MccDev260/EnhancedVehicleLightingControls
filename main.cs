@@ -13,6 +13,7 @@ namespace EnhancedVehicleLightingControls
         Ped playerCharacter = Game.Player.Character;
         bool isSirenSilent;
         bool leftIndicator, rightIndicator;
+        bool hazards;
 
         Keys sirenToggleKey, beamToggleKey, interiorLightToggleKey, leftIndicatorKey, rightIndicatorKey;
         GTA.Control sirenToggleButton, beamToggleButton, leftIndicatorButton, rightIndicatorButton;
@@ -56,6 +57,7 @@ namespace EnhancedVehicleLightingControls
                 GamePad();
         }
 
+        #region Input
         private void OnKeyDown(object sender, KeyEventArgs e)
         {   
             if (playerCharacter.CurrentVehicle != null)
@@ -91,6 +93,7 @@ namespace EnhancedVehicleLightingControls
             if (Game.IsControlJustPressed(rightIndicatorButton))
                 ToggleRightIndicator();
         }
+        #endregion
 
         private void ToggleSiren()
         {
@@ -114,13 +117,20 @@ namespace EnhancedVehicleLightingControls
             playerCharacter.CurrentVehicle.IsInteriorLightOn = !playerCharacter.CurrentVehicle.IsInteriorLightOn;
         }
 
+        #region Indicators
+        private void ToggleHazards()
+        {
+            hazards = !hazards;
+            SetIndicators(hazards, hazards);
+        }
+
         private void ToggleRightIndicator()
         {
             if (leftIndicator)
                 ToggleLeftIndicator();
-
+            
             rightIndicator = !rightIndicator;
-            playerCharacter.CurrentVehicle.IsRightIndicatorLightOn = rightIndicator;
+            SetIndicators(false, rightIndicator);
         }
 
         private void ToggleLeftIndicator()
@@ -129,7 +139,14 @@ namespace EnhancedVehicleLightingControls
                 ToggleRightIndicator();
 
             leftIndicator = !leftIndicator;
-            playerCharacter.CurrentVehicle.IsLeftIndicatorLightOn = leftIndicator;
+            SetIndicators(leftIndicator);
         }
+
+        private void SetIndicators(bool leftIndicator = false, bool rightIndicator = false)
+        {
+            playerCharacter.CurrentVehicle.IsLeftIndicatorLightOn = leftIndicator;
+            playerCharacter.CurrentVehicle.IsRightIndicatorLightOn = rightIndicator;
+        }
+        #endregion
     }
 }
