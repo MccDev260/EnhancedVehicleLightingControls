@@ -46,7 +46,7 @@ See '\docs\ControllerButtonList.pdf' for a list of valid button binds.
 
 ## Changelog
 - **v0.3.0**: Added hazard light features.
-- **v0.2.3.0**: Added basic controller support.
+- **v0.2.0**: Added basic controller support.
 
 ---
 
