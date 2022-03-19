@@ -27,7 +27,7 @@ Keep in mind that whilst holding the modifier button, only some basic driving fu
 #### *Keyboard*:
 - **Siren Toggle**: Tab
 - **Beam Toggle**: CapsLock
-- **Interior Light Toggle**: I
+- **Interior Light**: I
 - **Left Indicator**: Left
 - **Right Indicator**: Right
 - **Hazard lights**: Down 
@@ -35,11 +35,11 @@ Keep in mind that whilst holding the modifier button, only some basic driving fu
 #### *Controller*:
 - **Modifier Button**: LB 
 - **Siren Toggle**: DPadDown
-- **Beam Toggle**: X button
-- **Interior Light Toggle**: Y button 
+- **Beam Toggle**: X
+- **Interior Light Toggle**: Y
 - **Left Indicator**: DPadLeft
 - **Right Indicator**: DPadRight
-- **Hazard lights**: RB
+- **Hazard lights**: DPadUp
 
 #### *Custom Bindings*:
 You can change the default controls in the .ini file. 
