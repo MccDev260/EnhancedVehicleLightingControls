@@ -1,6 +1,6 @@
 # Enhanced Vehicle Lighting Controls
 ## Description
-Get more control over your vehicle! This mod allows you to silence sirens with one key press, Toggle your headlights between full and low beams, Toggle the interior light and actually use your indicators!    
+Get more control over your vehicle! This mod allows you to silence sirens with one key press, Toggle your headlights between full and low beams, Toggle the interior light and actually use your indicators!
 
 ### *Controller Support*:
 This mod supports controller input with the use of a modifier button, which by default is the Left Bumper. To change the button binding, See the [Mod Settings] section of the .ini file.
@@ -58,3 +58,13 @@ See '\docs\ControllerButtonList.pdf' for a list of valid button binds.
 - Sometimes when the mod first loads the input is unresponsive; To fix, simply reload the script via the ScriptHookVDotNet console (F4 by default). I've only noticed this while using LSPDFR.
 
 ---
+
+## Developers and Support:
+The source code can be found [on GitHub](http://www.dev-c.com/gtav/scripthookv/). 
+
+If you would like to extend or improve this project, feel free to submit a pull request!
+
+To report a bug, open a new issue with the 'bug' label.
+
+If you have an idea for a feature you would like to see in a future release, open a new issue with the 'enhancement' label.
+
