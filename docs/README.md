@@ -35,11 +35,11 @@ Keep in mind that whilst holding the modifier button, only some basic driving fu
 #### *Controller*:
 - **Modifier Button**: LB 
 - **Siren Toggle**: DPadDown
-- **Beam Toggle**: x button
+- **Beam Toggle**: X button
+- **Interior Light Toggle**: Y button 
 - **Left Indicator**: DPadLeft
 - **Right Indicator**: DPadRight
 - **Hazard lights**: RB
-
 
 #### *Custom Bindings*:
 You can change the default controls in the .ini file. 
@@ -48,6 +48,7 @@ See '\docs\ControllerButtonList.pdf' for a list of valid button binds.
 --- 
 
 ## Changelog
+- **v0.4.1**: Add ability to toggle interior light with controller. 
 - **v0.4.0**: Improved controller support.
 - **v0.3.0**: Add hazard light features.
 - **v0.2.0**: Add basic controller support.

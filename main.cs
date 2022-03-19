@@ -48,7 +48,7 @@ namespace EnhancedVehicleLightingControls
         private void OnTick(object sender, EventArgs e)
         {
             string modName = "Enhanced Vehicle Lighting Controls";
-            string version = "PreRelease v0.4.0";
+            string version = "PreRelease v0.4.1";
             string developer = "MccDev260";
 
             if (firstTime)
