@@ -3,7 +3,9 @@
 Get more control over your vehicle! This mod allows you to silence sirens with one key press, Toggle your headlights between full and low beams, Toggle the interior light and actually use your indicators!    
 
 ### *Controller Support*:
-As of v0.2.0 this mod has basic controller support. Despite this, i still recommend using a keyboard for the best experience as nearly all the controller buttons are pre mapped to native functions leading to conflicts. I am working on improving this for a later release.
+This mod supports controller input with the use of a modifier button, which by default is the Left Bumper. To change the button binding, See the ‘Mod Settings’ section of the .ini file.
+Keep in mind that whilst holding the modifier button, only some basic driving functions are enabled.
+
 
 ---
 
@@ -16,7 +18,7 @@ As of v0.2.0 this mod has basic controller support. Despite this, i still recomm
 
 ## Installation
 - Navigate to your GTA V root folder.
-- Copy the \scripts folder into the directory.
+- Copy the /scripts folder into the directory.
 
 ---
 
@@ -31,6 +33,7 @@ As of v0.2.0 this mod has basic controller support. Despite this, i still recomm
 - **Hazard lights**: Down 
     
 #### *Controller*:
+- **Modifier Button**: LB 
 - **Siren Toggle**: DPadDown
 - **Beam Toggle**: x button
 - **Left Indicator**: DPadLeft
@@ -45,8 +48,9 @@ See '\docs\ControllerButtonList.pdf' for a list of valid button binds.
 --- 
 
 ## Changelog
-- **v0.3.0**: Added hazard light features.
-- **v0.2.0**: Added basic controller support.
+- **v0.4.0**: Improved controller support.
+- **v0.3.0**: Add hazard light features.
+- **v0.2.0**: Add basic controller support.
 
 ---
 
