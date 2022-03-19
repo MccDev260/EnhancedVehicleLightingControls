@@ -6,7 +6,6 @@ Get more control over your vehicle! This mod allows you to silence sirens with o
 This mod supports controller input with the use of a modifier button, which by default is the Left Bumper. To change the button binding, See the [Mod Settings] section of the .ini file.
 Keep in mind that whilst holding the modifier button, only some basic driving functions are enabled.
 
-
 ---
 
 ## Requirements:
