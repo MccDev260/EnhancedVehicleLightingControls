@@ -16,7 +16,7 @@ namespace EnhancedVehicleLightingControls
         bool hazards;
 
         Keys sirenToggleKey, beamToggleKey, interiorLightToggleKey, leftIndicatorKey, rightIndicatorKey, hazardsKey;
-        GTA.Control sirenToggleButton, beamToggleButton, leftIndicatorButton, rightIndicatorButton, hazardsButton, modifierButton;
+        GTA.Control sirenToggleButton, beamToggleButton, interiorLightToggleButton, leftIndicatorButton, rightIndicatorButton, hazardsButton, modifierButton;
 
         public Main()
         {
@@ -41,6 +41,7 @@ namespace EnhancedVehicleLightingControls
             rightIndicatorButton = config.GetValue<GTA.Control>("Indicators", "Right_Indicator_Button", GTA.Control.ScriptPadRight);
             hazardsButton = config.GetValue<GTA.Control>("Indicators", "Hazard_Lights_Button", GTA.Control.ScriptRB);
             modifierButton = config.GetValue<GTA.Control>("Mod Settings", "Modifier_Button", GTA.Control.ScriptLB);
+            interiorLightToggleButton = config.GetValue<GTA.Control>("Interior", "Interior_Light_Toggle_Button", GTA.Control.ScriptRUp);
             #endregion
         }
 
@@ -101,6 +102,9 @@ namespace EnhancedVehicleLightingControls
 
                 if (Game.IsControlJustReleased(beamToggleButton))
                     ToggleFullBeams();
+
+                if (Game.IsControlJustPressed(interiorLightToggleButton))
+                    ToggleInteriorLights();
 
                 if (Game.IsControlJustPressed(leftIndicatorButton))
                     ToggleLeftIndicator();
