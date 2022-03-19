@@ -60,7 +60,7 @@ See '\docs\ControllerButtonList.pdf' for a list of valid button binds.
 ---
 
 ## Developers and Support:
-The source code can be found [on GitHub](http://www.dev-c.com/gtav/scripthookv/). 
+The source code can be found [on GitHub](https://github.com/MccDev260/EnhancedVehicleLightingControls). 
 
 If you would like to extend or improve this project, feel free to submit a pull request!
 
