@@ -16,7 +16,7 @@ namespace EnhancedVehicleLightingControls
         bool hazards;
 
         Keys sirenToggleKey, beamToggleKey, interiorLightToggleKey, leftIndicatorKey, rightIndicatorKey, hazardsKey;
-        GTA.Control sirenToggleButton, beamToggleButton, leftIndicatorButton, rightIndicatorButton, hazardsButton;
+        GTA.Control sirenToggleButton, beamToggleButton, leftIndicatorButton, rightIndicatorButton, hazardsButton, modifierButton;
 
         public Main()
         {
@@ -40,22 +40,23 @@ namespace EnhancedVehicleLightingControls
             leftIndicatorButton = config.GetValue<GTA.Control>("Indicators", "Left_Indicator_Button", GTA.Control.ScriptPadLeft);
             rightIndicatorButton = config.GetValue<GTA.Control>("Indicators", "Right_Indicator_Button", GTA.Control.ScriptPadRight);
             hazardsButton = config.GetValue<GTA.Control>("Indicators", "Hazard_Lights_Button", GTA.Control.ScriptRB);
+            modifierButton = config.GetValue<GTA.Control>("Mod Settings", "Modifier_Button", GTA.Control.ScriptLB);
             #endregion
         }
 
         private void OnTick(object sender, EventArgs e)
         {
             string modName = "Enhanced Vehicle Lighting Controls";
-            string version = "PreRelease v0.3.0";
+            string version = "PreRelease v0.4.0";
             string developer = "MccDev260";
 
             if (firstTime)
             {
-                Notification.Show(NotificationIcon.Blocked, modName, developer, version + " " + "loaded!!", false, true);
+                Notification.Show(NotificationIcon.Blocked, modName, developer, $"{version} loaded!!", false, true);
                 firstTime = false;
             }
 
-            if (Game.LastInputMethod == InputMethod.GamePad && playerCharacter.CurrentVehicle != null)
+            if (Game.LastInputMethod == InputMethod.GamePad)
                 GamePad();
         }
 
@@ -86,20 +87,34 @@ namespace EnhancedVehicleLightingControls
 
         private void GamePad()
         {
-            if (Game.IsControlJustReleased(sirenToggleButton))
-                ToggleSiren();
+            if (Game.IsControlPressed(modifierButton) && playerCharacter.CurrentVehicle != null)
+            {
+                // Disable all player controls except for some driving functions.
+                Game.DisableAllControlsThisFrame();
+                Game.EnableControlThisFrame(GTA.Control.VehicleAccelerate);
+                Game.EnableControlThisFrame(GTA.Control.VehicleBrake);
+                Game.EnableControlThisFrame(GTA.Control.VehicleHorn);
+                Game.EnableControlThisFrame(GTA.Control.VehicleLookBehind);
 
-            if (Game.IsControlJustReleased(beamToggleButton))
-                ToggleFullBeams();
+                if (Game.IsControlJustReleased(sirenToggleButton))
+                    ToggleSiren();
 
-            if (Game.IsControlJustPressed(leftIndicatorButton))
-                ToggleLeftIndicator();
+                if (Game.IsControlJustReleased(beamToggleButton))
+                    ToggleFullBeams();
 
-            if (Game.IsControlJustPressed(rightIndicatorButton))
-                ToggleRightIndicator();
+                if (Game.IsControlJustPressed(leftIndicatorButton))
+                    ToggleLeftIndicator();
 
-            if (Game.IsControlJustPressed(hazardsButton))
-                ToggleHazards();
+                if (Game.IsControlJustPressed(rightIndicatorButton))
+                    ToggleRightIndicator();
+
+                if (Game.IsControlJustPressed(hazardsButton))
+                    ToggleHazards();
+            }
+            else if (Game.IsControlJustReleased(modifierButton))
+            {
+                Game.EnableAllControlsThisFrame();
+            }
         }
         #endregion
 
